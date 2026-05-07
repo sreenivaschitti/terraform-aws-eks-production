@@ -32,6 +32,22 @@ variable "public_subnet_cidr" {
   
 }
 
+variable "private_subnet_cidr" {
+
+    type = list(string)
+
+    default = ["10.0.11.0/24","10.0.12.0/24"]
+  
+}
+
+variable "database_subnet_cidr" {
+
+    type = list(string)
+
+    default = ["10.0.21.0/24","10.0.22.0/24"]
+  
+}
+
 variable "vpc_tags" {
   type    = map
   default = {}
@@ -43,5 +59,19 @@ variable "igw_tags" {
 }
 
 variable "public_subnet_tags" {
+    type    = map
+  default = {}
+  
+}
+
+variable "private_subnet_tags" {
+    type    = map
+  default = {}
+  
+}
+
+variable "database_subnet_tags" {
+    type    = map
+  default = {}
   
 }
