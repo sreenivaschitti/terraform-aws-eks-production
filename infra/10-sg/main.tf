@@ -2,9 +2,11 @@ module "sg" {
 
 for_each = toset(var.sg_names)
 
-    source = "git::https://github.com/sreenivaschitti/terraform-aws-eks-production.git//modules/terraform-aws-sg?href=main"
+    source = "git::https://github.com/sreenivaschitti/terraform-aws-eks-production.git//modules/terraform-aws-sg?ref=main"
 
  sg_name     = replace(each.key, "_", "-")
+
+ vpc_id = local.vpc_id
  
  project = var.project
 
