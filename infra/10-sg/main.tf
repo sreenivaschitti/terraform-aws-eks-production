@@ -4,7 +4,7 @@ count = length(var.sg_names)
 
     source = "git::https://github.com/sreenivaschitti/terraform-aws-eks-production.git//modules/terraform-aws-sg?ref=main"
 
- sg_name     = replace(var.sg_names, "_", "-")
+ sg_name     = replace(var.sg_names[count.index], "_", "-")
 
  vpc_id = local.vpc_id
  
