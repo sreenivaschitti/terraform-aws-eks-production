@@ -11,7 +11,7 @@ locals {
             var.sg_tags,
 
             local.commontags,
-            { Name = "${var.project}-${var.environment}-vpc"
+            { Name = "${var.project}-${var.environment}-${var.sg_name}"
             }
             
 
